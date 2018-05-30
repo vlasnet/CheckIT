@@ -1,0 +1,43 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  position: relative;
+  display: block;
+  padding: 25px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  border-radius: 2px;
+}
+
+.link:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.link::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  display: block;
+  width: 0;
+  transition: width 0.2s linear;
+  height: 6px;
+  background-color: #ffffff;
+}
+
+.active {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.link.active::after {
+  width: 100%;
+}
