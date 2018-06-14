@@ -11,3 +11,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.roundImage {
+  border-radius: 100%;
+}
+
+.modalMainImage {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -8,6 +8,7 @@ import routerConfig, { routes } from '../../routing';
 import { AuthContext } from '../../context';
 import { initAuthStateListener } from '../../firebase';
 import styles from './styles.css';
+import imageStyles from '../shared/Image/styles.css';
 import placeholderAvatar from '../shared/Image/placeholder.png';
 
 const initialState = {
@@ -55,6 +56,7 @@ export default class App extends Component {
   render() {
     const { isAuth, isModalOpen } = this.state;
     const { public: publicRoutes, private: privateRoutes } = routerConfig;
+    const { roundImage, modalMainImage } = imageStyles;
 
     return (
       <AuthContext.Provider value={{ ...this.state }}>
@@ -74,15 +76,24 @@ export default class App extends Component {
 
             <Redirect to={routes.login} />
           </Switch>
-          <Modal isOpen={isModalOpen} onRequestClose={this.handleModalToggle} overlayClassName={styles.modalBackdrop} className={styles.modal}>
-            <button className={styles.modalCloseButton} onClick={this.handleModalToggle}>&#10006;</button>
+          <Modal
+            isOpen={isModalOpen}
+            onRequestClose={this.handleModalToggle}
+            overlayClassName={styles.modalBackdrop}
+            className={styles.modal}
+          >
+            <button
+              className={styles.modalCloseButton}
+              onClick={this.handleModalToggle}
+            >&#10006;</button>
             <div>
-              <Image width={160} height={160} alt='User Avatar' src={placeholderAvatar} wrapperStyles={{
-                borderRadius: '100%',
-                position: 'absolute',
-                top: '-80px',
-                left: 'calc(50% - 80px)'
-              }} />
+              <Image
+                width={160}
+                height={160}
+                wrapperExtraClasses={`${roundImage} ${modalMainImage}`}
+                alt='User Avatar'
+                src={placeholderAvatar}
+              />
             </div>
           </Modal>
         </div>
