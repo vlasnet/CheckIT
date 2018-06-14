@@ -1,0 +1,13 @@
+.wrapper {
+  overflow: hidden;
+  box-shadow: 0 0 5px 1px #aaa;
+}
+
+.image {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

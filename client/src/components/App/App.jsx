@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import Modal from 'react-modal';
+import Image from '../shared/Image';
 import PrivateRoute from '../shared/PrivateRoute';
 import AppBar from '../AppBar';
 import routerConfig, { routes } from '../../routing';
 import { AuthContext } from '../../context';
 import { initAuthStateListener } from '../../firebase';
 import styles from './styles.css';
+import placeholderAvatar from '../shared/Image/placeholder.png';
 
 const initialState = {
   email: null,
@@ -13,7 +16,10 @@ const initialState = {
   isLoading: false,
   userId: null,
   isAuth: false,
+  isModalOpen: false
 };
+
+Modal.setAppElement('#root');
 
 export default class App extends Component {
   state = { ...initialState };
@@ -34,16 +40,26 @@ export default class App extends Component {
       isAuth: true,
     });
 
+  handleModalToggle = () => {
+    const { isModalOpen } = this.state;
+
+    this.setState({ isModalOpen: !isModalOpen });
+  };
+
+  handleProfileModalOpen = () => {
+    this.handleModalToggle();
+  };
+
   handleLogout = () => this.setState({ ...initialState });
 
   render() {
-    const { isAuth } = this.state;
+    const { isAuth, isModalOpen } = this.state;
     const { public: publicRoutes, private: privateRoutes } = routerConfig;
 
     return (
       <AuthContext.Provider value={{ ...this.state }}>
         <div className={styles.app}>
-          {isAuth && <AppBar />}
+          {isAuth && <AppBar toggleProfileModal={this.handleProfileModalOpen} />}
 
           <Switch>
             {publicRoutes.map(route => <Route key={route.path} {...route} />)}
@@ -58,6 +74,17 @@ export default class App extends Component {
 
             <Redirect to={routes.login} />
           </Switch>
+          <Modal isOpen={isModalOpen} onRequestClose={this.handleModalToggle} overlayClassName={styles.modalBackdrop} className={styles.modal}>
+            <button className={styles.modalCloseButton} onClick={this.handleModalToggle}>&#10006;</button>
+            <div>
+              <Image width={160} height={160} alt='User Avatar' src={placeholderAvatar} wrapperStyles={{
+                borderRadius: '100%',
+                position: 'absolute',
+                top: '-80px',
+                left: 'calc(50% - 80px)'
+              }} />
+            </div>
+          </Modal>
         </div>
       </AuthContext.Provider>
     );

@@ -1,15 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { routes } from '../../routing';
 import styles from './styles.css';
 
 const navLinks = [
-  { path: routes.profile, text: 'Профиль' },
-  { path: routes.logout, text: 'Выйти' },
+  { path: routes.logout, text: 'Выйти' }
 ];
 
-const Navigation = () => (
+const Navigation = ({ toggleProfileModal }) => (
   <ul className={styles.nav}>
+    <li>
+      <button className={styles.link} onClick={toggleProfileModal}>Профиль</button>
+    </li>
     {navLinks.map(({ path, text }) => (
       <li key={path}>
         <NavLink
@@ -22,5 +25,9 @@ const Navigation = () => (
     ))}
   </ul>
 );
+
+Navigation.propTypes = {
+  toggleProfileModal: PropTypes.func.isRequired
+};
 
 export default Navigation;
