@@ -11,11 +11,15 @@
   position: relative;
   display: block;
   padding: 25px 20px;
+  border: 0;
   text-decoration: none;
   font-size: 18px;
   font-weight: 400;
   color: #ffffff;
+  background-color: unset;
   border-radius: 2px;
+  cursor: pointer;
+  outline: none;
 }
 
 .link:hover {
