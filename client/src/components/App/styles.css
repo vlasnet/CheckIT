@@ -7,23 +7,25 @@
 .modal {
   width: 570px;
   height: 600px;
-  margin: 100px 0;
-  background-color: #fff;
-  position: absolute;
-  box-shadow: 0 0 5px 1px #aaa;
-  top: calc(50% - 100px);
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding: 60px 50px;
-  box-sizing: border-box;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 0 5px 1px #aaa;
+  left: 50%;
+  transform: translateX(-50%);
   outline: none;
   text-align: center;
+}
+
+.modalWithMainImage {
+  padding-top: 90px;
 }
 
 .modalBackdrop {
   position: fixed;
   width: 100%;
   height: 100%;
+  padding: 15% 10px 10px;
   top: 0;
   right: 0;
   bottom: 0;
@@ -47,8 +49,20 @@
 
 @media (max-width: 768px) {
   .modal {
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    top: 50%;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+  }
+
+  .modalBackdrop {
+    padding-top: 10px;
+  }
+
+  .modalBackdropWithMainImage {
+    padding-top: 90px;
+  }
+
+  .modalWithMainImage {
+    padding-top: 90px;
   }
 }

@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import Navigation from '../Navigation';
 import styles from './styles.css';
 
-const AppBar = ({ toggleProfileModal }) => (
+const AppBar = ({ toggleModal }) => (
   <header className={styles.header}>
     <nav className={styles.container}>
-      <Navigation toggleProfileModal={toggleProfileModal} />
+      <Navigation toggleModal={toggleModal} />
     </nav>
   </header>
 );
 
 AppBar.propTypes = {
-  toggleProfileModal: PropTypes.func.isRequired
+  toggleModal: PropTypes.func.isRequired
 };
 
 export default AppBar;

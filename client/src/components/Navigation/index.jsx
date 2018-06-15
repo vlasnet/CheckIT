@@ -8,10 +8,10 @@ const navLinks = [
   { path: routes.logout, text: 'Выйти' }
 ];
 
-const Navigation = ({ toggleProfileModal }) => (
+const Navigation = ({ toggleModal }) => (
   <ul className={styles.nav}>
     <li>
-      <button className={styles.link} onClick={toggleProfileModal}>Профиль</button>
+      <button className={styles.link} onClick={toggleModal}>Профиль</button>
     </li>
     {navLinks.map(({ path, text }) => (
       <li key={path}>
@@ -27,7 +27,7 @@ const Navigation = ({ toggleProfileModal }) => (
 );
 
 Navigation.propTypes = {
-  toggleProfileModal: PropTypes.func.isRequired
+  toggleModal: PropTypes.func.isRequired
 };
 
 export default Navigation;

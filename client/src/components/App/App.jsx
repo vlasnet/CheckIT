@@ -47,10 +47,6 @@ export default class App extends Component {
     this.setState({ isModalOpen: !isModalOpen });
   };
 
-  handleProfileModalOpen = () => {
-    this.handleModalToggle();
-  };
-
   handleLogout = () => this.setState({ ...initialState });
 
   render() {
@@ -61,7 +57,7 @@ export default class App extends Component {
     return (
       <AuthContext.Provider value={{ ...this.state }}>
         <div className={styles.app}>
-          {isAuth && <AppBar toggleProfileModal={this.handleProfileModalOpen} />}
+          {isAuth && <AppBar toggleModal={this.handleModalToggle} />}
 
           <Switch>
             {publicRoutes.map(route => <Route key={route.path} {...route} />)}
@@ -79,8 +75,8 @@ export default class App extends Component {
           <Modal
             isOpen={isModalOpen}
             onRequestClose={this.handleModalToggle}
-            overlayClassName={styles.modalBackdrop}
-            className={styles.modal}
+            overlayClassName={`${styles.modalBackdrop} ${styles.modalBackdropWithMainImage}`}
+            className={`${styles.modal} ${styles.modalWithMainImage}`}
           >
             <button
               className={styles.modalCloseButton}
