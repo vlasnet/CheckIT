@@ -54,7 +54,6 @@ class LoginPage extends Component {
           <div className={styles.container}>
             <LoginForm onSubmit={this.handleLogin} />
             <p className={styles.link}>
-              <span>Еще нет аккаунта?</span>
               <br />
               <Link to={routes.register}>Зарегистрироваться</Link>
             </p>
