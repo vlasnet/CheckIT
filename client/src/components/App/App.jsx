@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import Image from '../shared/Image';
 import PrivateRoute from '../shared/PrivateRoute';
 import AppBar from '../AppBar';
+import Footer from '../Footer';
 import routerConfig, { routes } from '../../routing';
 import { AuthContext } from '../../context';
 import { initAuthStateListener } from '../../firebase';
@@ -92,6 +93,7 @@ export default class App extends Component {
               />
             </div>
           </Modal>
+          {isAuth && <Footer />}
         </div>
       </AuthContext.Provider>
     );
