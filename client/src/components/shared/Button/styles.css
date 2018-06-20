@@ -6,37 +6,60 @@
   min-height: 36px;
   border: none;
   outline: none;
-  padding: 0px 16px;
-  border-radius: 2px;
+  padding: 0px 32px;
+  border-radius: 10px;
   color: #ffffff;
   font-size: 1rem;
   cursor: pointer;
   font-weight: 400;
   background-color: #212121;
   text-decoration: none;
-  font-size: 16px;
   text-align: center;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
   font-family: Roboto, sans-serif;
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
   overflow: hidden;
   vertical-align: middle;
+  text-transform: uppercase;
 }
 
 .button:hover,
 .button:focus {
-  background-color: #0388ca;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
     0 1px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .primary {
-  background-color: #039be5;
+  background-color: #ee6337;
 }
 
 .primary:hover {
-  background-color: #1976d2;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.4), 0 4px 5px 0 rgba(0, 0, 0, 0.34), 0 1px 10px 0 rgba(0, 0, 0, 0.32);
+}
+
+.social {
+  width: 30%;
+  padding: 0 0 0 5%;
+  border-radius: 0;
+  color: #000;
+  font-size: 12px;
+  text-transform: capitalize;
+  box-shadow: none;
+}
+
+.facebook {
+  background: url('../../../assets/facebook.svg') no-repeat 10px center #eee;
+  background-size: 17%;
+}
+
+.google {
+  background: url('../../../assets/google-plus.svg') no-repeat 10px center #eee;
+  background-size: 20%;
+}
+
+.linkedin {
+  background: url('../../../assets/linkedin.svg') no-repeat 10px center #eee;
+  background-size: 15%;
 }
