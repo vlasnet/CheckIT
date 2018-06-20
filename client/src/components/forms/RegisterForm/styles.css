@@ -4,37 +4,96 @@
   align-items: center;
   width: 400px;
   margin: 0 auto;
-  padding: 10px;
 }
 
 .input {
   display: block;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #ccc;
   background: #fff;
-  padding: 15px;
+  padding: 10px 10px 10px 0;
   outline: none;
-  width: 100%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 10px;
   margin-bottom: 20px;
   transition: 0.3s;
   font-family: inherit;
-  margin-top: 10px;
 }
 
 .input::placeholder {
-  color: #757575;
+  font-size: 14px;
+  color: #3e3e3e;
 }
 
 .list {
+  list-style: none;
+  margin: 0;
   padding: 0;
   width: 100%;
 }
 
 .item {
-  display: block;
+  display: flex;
+  align-items: center;
   list-style-type: none;
 }
 
 .input:focus {
-  border: 1px solid #777;
+  border-bottom: 1px solid #777;
+}
+
+.title {
+  color: #0000cd;
+  font-size: 22px;
+}
+
+.avatar {
+  background: url('../../../assets/avatar.svg') no-repeat 0 center;
+  background-size: 5%;
+}
+
+.mail {
+  background: url('../../../assets/mail.svg') no-repeat 0 center;
+  background-size: 5%;
+}
+
+.pass {
+  background: url('../../../assets/padlock.svg') no-repeat 0 center;
+  background-size: 5%;
+}
+
+.error_status {
+  margin: 0 auto;
+  width: 18px;
+  height: 18px;
+}
+
+.confirm {
+  background: transparent url('../../../assets/checked.svg') no-repeat center;
+  background-size: 100%;
+}
+
+.fail {
+  background: transparent url('../../../assets/unchecked.svg') no-repeat center;
+  background-size: 100%;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  border: none;
+  outline: none;
+}
+
+.open_eye {
+  background: transparent url('../../../assets/eye.svg') no-repeat center;
+  background-size: 100%;
+}
+
+.close_eye {
+  background: transparent url('../../../assets/vision-off.svg') no-repeat center;
+  background-size: 100%;
 }

@@ -43,7 +43,6 @@ class RegisterPage extends Component {
         <div className={styles.container}>
           <RegisterForm onSubmit={this.handleRegistration} />
           <p className={styles.link}>
-            <span>Уже есть аккаунт?</span>
             <br />
             <Link to={routes.login}>Войти</Link>
           </p>
