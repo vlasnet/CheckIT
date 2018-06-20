@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Validator from 'validator';
 import Button from '../../shared/Button';
+import SocialsButtons from "../../shared/SocialsButtons";
 import styles from './styles.css';
 
 export default class LoginForm extends Component {
@@ -118,11 +119,7 @@ export default class LoginForm extends Component {
           </div>
             <a className={styles.restore} href="/">Восстановить пароль</a>
         </div>
-        <div className={styles.buttonsWrapper}>
-          <Button type="submit" text="Facebook" facebook social />
-          <Button type="submit" text="Google +" google social />
-          <Button type="submit" text="Linked In"  linkedin social />
-        </div>
+        <SocialsButtons/>
         <Button type="submit" text="Войти" primary />
       </form>
     );
