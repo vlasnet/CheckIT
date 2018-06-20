@@ -67,13 +67,6 @@
   font-size: 12px;
 }
 
-.buttonsWrapper {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 10px 0 30px;
-}
-
 .checkbox {
   display: flex;
   align-items: center;
