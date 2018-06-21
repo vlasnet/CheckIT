@@ -51,14 +51,14 @@ export default class App extends Component {
   handleLogout = () => this.setState({ ...initialState });
 
   render() {
-    const { isAuth, isModalOpen } = this.state;
+    const { isAuth, isModalOpen, displayName } = this.state;
     const { public: publicRoutes, private: privateRoutes } = routerConfig;
     const { roundImage, modalMainImage } = imageStyles;
 
     return (
       <AuthContext.Provider value={{ ...this.state }}>
         <div className={styles.app}>
-          {isAuth && <AppBar toggleModal={this.handleModalToggle} />}
+          {isAuth && <AppBar toggleModal={this.handleModalToggle} name={displayName} />}
 
           <Switch>
             {publicRoutes.map(route => <Route key={route.path} {...route} />)}
