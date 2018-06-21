@@ -11,7 +11,11 @@ const Sidebar = ({ title, children }) => (
 
 Sidebar.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node,
+};
+
+Sidebar.defaultProps = {
+  children: null,
 };
 
 export default Sidebar;
