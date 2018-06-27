@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Modal from 'react-modal';
 import Image from '../shared/Image';
+import TotalUser from '../shared/userData/totalUser';
+
 import PrivateRoute from '../shared/PrivateRoute';
 import AppBar from '../AppBar';
 import routerConfig, { routes } from '../../routing';
@@ -90,6 +92,7 @@ export default class App extends Component {
                 alt='User Avatar'
                 src={placeholderAvatar}
               />
+                <TotalUser/>
             </div>
           </Modal>
         </div>
